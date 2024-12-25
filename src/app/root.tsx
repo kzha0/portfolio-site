@@ -8,8 +8,8 @@ import {
     useRouteError,
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
-import { MantineProvider } from "@mantine/core";
 
+import { ThemeProvider } from "~/components/MantineThemeProvider";
 import { AppLayout } from "~/components/AppLayout";
 
 import { ErrorComponent } from "~/components/error/Error";
@@ -40,7 +40,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <Links />
             </head>
             <body>
-                <MantineProvider defaultColorScheme="dark">{children}</MantineProvider>
+                <ThemeProvider>
+                    {children}
+                </ThemeProvider>
                 <ScrollRestoration />
                 <Scripts />
             </body>
@@ -50,7 +52,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
     return (
-        <div id="root" style={{ height: "100vh" }}>
+        <div id="root">
             <AppLayout>
                 <Outlet />
             </AppLayout>
