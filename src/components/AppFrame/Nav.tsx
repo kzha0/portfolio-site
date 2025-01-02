@@ -117,8 +117,9 @@ const ToggleColorScheme: React.FC = () => {
             ref={ref}
             onClick={toggleColorScheme}
             variant="transparent"
-            color={colorScheme === "light" ? "black" : "white"}
+            c="light-dark(black, white)"
             size="lg"
+            // aria-label="toggle-color-scheme"
         >
             <Box
                 component={colorScheme === "light" ? IconMoonFilled : IconSunFilled}

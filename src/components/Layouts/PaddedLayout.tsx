@@ -6,8 +6,8 @@ export const PaddedLayout: React.FC<
     const theme = useMantineTheme();
     return (
         <Flex
-            px={px ?? "4rem"}
-            py={py ?? "2rem"}
+            px={{ base: "xl", sm: "4rem" }}
+            py="xl"
         >
             <Flex
                 direction="column"

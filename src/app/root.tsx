@@ -61,7 +61,7 @@ export function HydrateFallback() {
         <div
             style={{
                 display: "flex",
-                height: "100vh",
+                height: "100dvh",
                 alignItems: "center",
                 justifyContent: "center",
                 backgroundColor: "light-dark(white, black)",

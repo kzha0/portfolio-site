@@ -51,21 +51,25 @@ export const CarouselOliOrder = () => {
             switch (type) {
                 case "image": {
                     return (
-                        <Box
+                        <Flex
                             h="100%"
-                            style={{
-                                borderRadius: "var(--mantine-radius-sm)",
-                                overflow: "hidden",
-                            }}
+                            align="center"
+                            justify="center"
                         >
                             <Image
                                 loading="lazy"
                                 decoding="async"
                                 {...{ src }}
-                                width="100%"
-                                height="100%"
+                                style={{
+                                    maxWidth: "100%",
+                                    maxHeight: "100%",
+                                    objectFit: "contain",
+                                    borderRadius: "var(--mantine-radius-sm)",
+                                }}
+                                // width="100%"
+                                // height="100%"
                             />
-                        </Box>
+                        </Flex>
                     );
                 }
                 case "external": {
@@ -74,6 +78,9 @@ export const CarouselOliOrder = () => {
                             allow="autoplay"
                             {...{ src }}
                             style={{
+                                maxWidth: "100%",
+                                maxHeight: "100%",
+                                objectFit: "contain",
                                 border: "none",
                                 borderRadius: "var(--mantine-radius-sm)",
                                 overflow: "hidden",

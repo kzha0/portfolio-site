@@ -95,6 +95,7 @@ const MainText: React.FC<React.PropsWithChildren> = ({ children }) => (
     <Text
         fw={400}
         fz="clamp(1rem, 16vw, 225.328px)"
+        // fz="16vw"
         lh={0.8}
         style={{
             fontFamily: "'M PLUS 1 Code', serif",
@@ -107,6 +108,7 @@ const MainText: React.FC<React.PropsWithChildren> = ({ children }) => (
 const SubText = () => (
     <Text
         fz="clamp(1.2rem, 2.5vw, 35.2075px)"
+        // fz="2.5vw"
         fw={{ base: 500, sm: 400 }}
         lh={1.4}
     >
@@ -178,15 +180,15 @@ export const HeroSection: React.FC<{ onArrowClick?: () => void }> = ({ onArrowCl
     return (
         <Flex
             pos="relative"
-            mih={`calc(100vh - ${headerHeight}px)`}
+            mih={`calc(100dvh - ${headerHeight}px)`}
             h="100%"
             // hides the down arrow
             style={{ overflow: "hidden" }}
         >
             <Flex
                 pos="absolute"
-                mih="100vh"
-                w="100%"
+                mih="100dvh"
+                w="100dvw"
                 h="100%"
                 align="center"
                 justify="center"
