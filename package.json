@@ -15,6 +15,7 @@
         "typecheck": "tsc"
     },
     "dependencies": {
+        "@mantine/carousel": "^7.15.2",
         "@mantine/core": "^7.14.3",
         "@mantine/hooks": "^7.14.3",
         "@refinedev/core": "^4.56.0",
@@ -26,6 +27,7 @@
         "@remix-run/testing": "^2.15.0",
         "@tabler/icons-react": "^3.23.0",
         "classnames": "^2.5.1",
+        "embla-carousel-react": "^7.1.0",
         "isbot": "^4",
         "normalize.css": "^8.0.1",
         "react": "^18.3.1",

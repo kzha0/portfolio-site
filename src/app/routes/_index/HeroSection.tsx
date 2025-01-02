@@ -137,6 +137,10 @@ const TitleText: React.FC = () => {
 // MARK: downarr
 
 const DownArrow: React.FC<{ onClick?: () => void }> = ({ onClick }) => {
+
+    // todo: OPTIMIZE
+    // scroll listener is constantly updating state
+
     const [scroll, _] = useWindowScroll();
 
     return (

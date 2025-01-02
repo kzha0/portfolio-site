@@ -1,11 +1,5 @@
 import { MDXProvider } from "@mdx-js/react";
-import {
-    CSSVariablesResolver,
-    MantineProvider,
-    createTheme,
-    Text,
-    Title,
-} from "@mantine/core";
+import { CSSVariablesResolver, MantineProvider, createTheme, Text, Title } from "@mantine/core";
 
 const theme = createTheme({
     fontFamily: "Geist, sans-serif",
@@ -72,18 +66,32 @@ export const ThemeProvider: React.FC<React.PropsWithChildren> = ({ children }) =
                         </Text>
                     ),
                     li: ({ children }) => (
-                        <li>
-                            <Text>{children}</Text>
-                        </li>
-                    ),
-                    p: ({ children }) => <Text ta="justify">{children}</Text>,
-                    strong: ({ children }) => (
-                        <Text
-                            span
-                            fw={700}
+                        <li
+                            style={{
+                                fontSize: "calc(1.375rem * var(--mantine-scale))",
+                                fontWeight: 300,
+                                textAlign: "justify",
+                                lineHeight: "160%",
+                            }}
                         >
                             {children}
-                        </Text>
+                        </li>
+                    ),
+                    p: ({ children }) => (
+                        <p
+                            style={{
+                                fontSize: "calc(1.375rem * var(--mantine-scale))",
+                                fontWeight: 300,
+                                textAlign: "justify",
+                                lineHeight: "160%",
+                                marginBlock: 0
+                            }}
+                        >
+                            {children}
+                        </p>
+                    ),
+                    strong: ({ children }) => (
+                        <strong style={{ fontWeight: 700 }}>{children}</strong>
                     ),
                 }}
             >

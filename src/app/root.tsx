@@ -14,6 +14,7 @@ import { ErrorComponent } from "~/components/error/Error";
 
 import "normalize.css";
 import "@mantine/core/styles.css";
+import "@mantine/carousel/styles.css";
 
 /* -------------------------------------------------------------------------- */
 
@@ -35,7 +36,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <html lang="en">
             <head>
                 <meta charSet="utf-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1"
+                />
                 <Meta />
                 <Links />
             </head>
@@ -72,7 +76,12 @@ export function ErrorBoundary() {
     const error = useRouteError();
     const { title, message } = getErrorDetails(error);
 
-    return <ErrorComponent title={title} message={message} />;
+    return (
+        <ErrorComponent
+            title={title}
+            message={message}
+        />
+    );
 }
 
 function getErrorDetails(error: unknown) {
