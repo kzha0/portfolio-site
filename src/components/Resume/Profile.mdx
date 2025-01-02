@@ -1,0 +1,46 @@
+import { Flex, AspectRatio, Image } from "@mantine/core";
+
+import { PaddedLayout } from "~/components/Layouts";
+import selfPortrait from "~/assets/img/self-portrait.jpg";
+
+export default function Layout({ children }) {
+    return (
+        <PaddedLayout maw="md">
+            {children}
+        </PaddedLayout>
+    );
+}
+
+<Flex gap="2rem" direction={{ base: "column", md: "row"}}>
+    <Flex direction="column">
+    #  Bridging business requirements and modern technology
+    <br/>
+    Hi! I'm **Jerrico Duran**, a fullstack programmer with a bachelor's degree in business from Manila, Philippines. I help small businesses automate business processes and solve general problems with technology.
+
+    <br/>
+    From planning, bookkeeping, finance, operations, order management, CRM, to business analytics, ERP, AI, and many other functions, I help MSMEs augment their business with the right hardware and software for their budget, scale, and needs that are sure to change day-to-day operations.
+
+    </Flex>
+    <Flex justify="center">
+        <AspectRatio
+            ratio={4 / 5}
+            style={{
+                borderRadius: "var(--mantine-radius-sm)",
+                overflow: "hidden",
+            }}
+            mb="auto"
+            maw={500}
+            miw={300}
+        >
+            <Image
+                src={selfPortrait}
+                style={{
+                    transform: "scale(1.15)",
+                }}
+                loading="lazy"
+                decoding="async"
+            />
+        </AspectRatio>
+    </Flex>
+</Flex>
+<br/>

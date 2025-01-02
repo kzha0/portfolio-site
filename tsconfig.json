@@ -31,5 +31,8 @@
             "~/page/*": ["src/app/routes/*"]
         }
     },
+    "mdx": {
+        "checkMdx": true,
+    },
     "include": ["env.d.ts", "**/*.ts", "**/*.tsx", ".codux/**/*"],
 }

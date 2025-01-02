@@ -2,6 +2,7 @@ import path from "node:path";
 import { vitePlugin as remix } from "@remix-run/dev";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
+import mdx from "@mdx-js/rollup";
 
 declare module "@remix-run/node" {
     interface Future {
@@ -11,6 +12,7 @@ declare module "@remix-run/node" {
 
 export default defineConfig({
     plugins: [
+        mdx({ providerImportSource: "@mdx-js/react" }),
         remix({
             ssr: false, // SPA mode https://remix.run/docs/en/main/guides/spa-mode
             future: {
@@ -20,7 +22,7 @@ export default defineConfig({
                 v3_singleFetch: true,
                 v3_lazyRouteDiscovery: true,
             },
-            appDirectory: "./src/app"
+            appDirectory: "./src/app",
         }),
         tsconfigPaths(),
     ],

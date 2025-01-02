@@ -9,13 +9,13 @@ import {
 } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
 
-import { ThemeProvider } from "~/components/MantineThemeProvider";
-import { AppLayout } from "~/components/AppLayout";
-
+import { AppFrame } from "~/components/AppFrame";
 import { ErrorComponent } from "~/components/error/Error";
 
 import "normalize.css";
 import "@mantine/core/styles.css";
+
+/* -------------------------------------------------------------------------- */
 
 export const links: LinksFunction = () => [
     { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -26,7 +26,7 @@ export const links: LinksFunction = () => [
     },
     {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Gloock&family=M+PLUS+1+Code:wght@100..700&display=swap",
     },
 ];
 
@@ -40,9 +40,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <Links />
             </head>
             <body>
-                <ThemeProvider>
-                    {children}
-                </ThemeProvider>
+                <AppFrame>{children}</AppFrame>
                 <ScrollRestoration />
                 <Scripts />
             </body>
@@ -51,17 +49,23 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-    return (
-        <div id="root">
-            <AppLayout>
-                <Outlet />
-            </AppLayout>
-        </div>
-    );
+    return <Outlet />;
 }
 
 export function HydrateFallback() {
-    return <p>Loading...</p>;
+    return (
+        <div
+            style={{
+                display: "flex",
+                height: "100vh",
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "light-dark(white, black)",
+            }}
+        >
+            <p>Loading...</p>
+        </div>
+    );
 }
 
 export function ErrorBoundary() {

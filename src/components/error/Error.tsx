@@ -1,5 +1,4 @@
 import { Link } from '@remix-run/react';
-import { ROUTES } from '~/router/config';
 
 const unknownErrorTitle = 'Ooops, something went wrong';
 
@@ -13,8 +12,8 @@ export const ErrorComponent = ({ title, message }: ErrorProps) => {
         <div>
             <h1>{title ?? unknownErrorTitle}</h1>
             {message && <div>{message}</div>}
-            <Link to={ROUTES.home.to()}>
-                Navigate to Home Page
+            <Link to="/">
+                Back to Home page
             </Link>
         </div>
     );
