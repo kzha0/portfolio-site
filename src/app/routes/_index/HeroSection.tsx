@@ -112,7 +112,7 @@ const SubText = () => (
         fw={{ base: 500, sm: 400 }}
         lh={1.4}
     >
-        Business automation specialist. Fullstack programmer.
+        Business analyst. Fullstack programmer.
     </Text>
 );
 
