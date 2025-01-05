@@ -17,11 +17,15 @@ export default function Layout({ children }) {
 
 ### Oli-Order
 *November 2024 — ongoing development*
-- An order management system implementation for Papi Oli, a popular restobar in The Pop Up, Katipunan, Q.C.
-- This project includes a mobile order-taking web app, flexible database backend with a customizable food and beverage menu, and a print server for WiFi/LAN thermal printers that can be deployed anywhere
-- Uses budget thermal printers from XPrinter company to cut equipment costs by over 85% (from a PHP 14,000 EPSON unit down to a PHP 2,000 XPrinter unit)
-- Drastically reduces waiters' motion waste and reduces order lead time by approx. 1 minute and 14 seconds
-- Started as a capstone research project during my 4th year in college
+- An order management system for restaurants and food & beverage businesses
+- Started as a capstone research project during my 4th year in college, in partnership with Papi Oli, a popular restobar in the Pop Up, Katipunan, Q.C.
+- This project includes:
+    - Mobile web app for taking orders
+    - Dashboard for viewing orders, managing employees, and editing the menu
+    - Backend database server written in Rust
+    - Print server made specifically for the budget XPrinter thermal printer
+- Cuts equipment costs by over 85% (from a PHP 14,000 EPSON unit down to a PHP 2,000 XPrinter unit)
+- Reduces waiters' motion waste and order lead time by approx. 1 minute and 14 seconds
 <CarouselOliOrder />
 <br />
 
@@ -38,7 +42,7 @@ export default function Layout({ children }) {
     - Optimized code generation and build process
     - Better developer ergonomics using Rust macros
     - More efficient source code parser
-    - Expanded support for data structuress
+    - Expanded support for data structures
     - Support for user-defined types/structs
     - Abstraction for Rust types into TypeScript
     - Finer control over code generation options in the CLI
