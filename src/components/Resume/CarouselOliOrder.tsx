@@ -1,6 +1,8 @@
 import { Flex, Image, AspectRatio } from "@mantine/core";
 import { Carousel } from "@mantine/carousel";
 
+import { ImageSkeleton } from "../Skeleton/Skeleton";
+
 import img1 from "~/assets/img/1000021280.webp";
 import img2 from "~/assets/img/Screenshot_From_2024-12-05_07-01-39.webp";
 import img3 from "~/assets/img/1000021277.webp";
@@ -64,19 +66,26 @@ export const CarouselOliOrder = () => {
                             align="center"
                             justify="center"
                         >
-                            <Image
-                                loading="lazy"
-                                decoding="async"
-                                {...{ src }}
+                            <ImageSkeleton
                                 style={{
-                                    maxWidth: "100%",
-                                    maxHeight: "100%",
+                                    width: "100%",
+                                    height: "100%",
                                     objectFit: "contain",
                                     borderRadius: "var(--mantine-radius-sm)",
                                 }}
-                                // width="100%"
-                                // height="100%"
-                            />
+                            >
+                                <Image
+                                    loading="lazy"
+                                    decoding="async"
+                                    {...{ src }}
+                                    style={{
+                                        width: "100%",
+                                        height: "100%",
+                                        objectFit: "contain",
+                                        borderRadius: "var(--mantine-radius-sm)",
+                                    }}
+                                />
+                            </ImageSkeleton>
                         </Flex>
                     );
                 }
@@ -144,6 +153,7 @@ export const CarouselOliOrder = () => {
         <Carousel
             withIndicators
             slideGap="md"
+            loop
         >
             {slides}
         </Carousel>

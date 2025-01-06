@@ -1,6 +1,7 @@
 import { Flex, AspectRatio, Image } from "@mantine/core";
 
 import { PaddedLayout } from "~/components/Layouts";
+import { ImageSkeleton } from "~/components/Skeleton/Skeleton.tsx";
 import selfPortrait from "~/assets/img/self-portrait.jpg";
 
 export default function Layout({ children }) {
@@ -32,14 +33,16 @@ export default function Layout({ children }) {
 
             w="clamp(0, 300, 500)"
         >
-            <Image
-                src={selfPortrait}
-                style={{
-                    transform: "scale(1.15)",
-                }}
-                loading="lazy"
-                decoding="async"
-            />
+            <ImageSkeleton>
+                <Image
+                    src={selfPortrait}
+                    style={{
+                        transform: "scale(1.15)",
+                    }}
+                    loading="lazy"
+                    decoding="async"
+                />
+            </ImageSkeleton>
         </AspectRatio>
     </Flex>
 </Flex>
