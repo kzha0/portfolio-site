@@ -1,4 +1,4 @@
-import type { MetaFunction } from "@remix-run/node";
+// import type { MetaFunction } from "@remix-run/node";
 import { useScrollIntoView } from "@mantine/hooks";
 import { Flex } from "@mantine/core";
 
@@ -8,13 +8,6 @@ import Profile from "~/components/Resume/Profile.mdx";
 import Experience from "~/components/Resume/Experience.mdx";
 
 /* -------------------------------------------------------------------------- */
-
-export const meta: MetaFunction = () => {
-    return [
-        { title: "Jerrico Duran" },
-        { name: "description", content: "Business automation specialist and fullstack programmer" },
-    ];
-};
 
 export default function Component() {
     const { scrollIntoView, targetRef: scrollToRef } = useScrollIntoView<HTMLDivElement>();

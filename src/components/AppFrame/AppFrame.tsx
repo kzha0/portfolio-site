@@ -4,6 +4,7 @@ import { ScrollArea, AppShell } from "@mantine/core";
 import { ThemeProvider } from "./Theme";
 import { NavContextProvider } from "./NavContext";
 import { Header, Sidenav } from "./Nav";
+import { Footer } from "./Footer";
 
 /* -------------------------------------------------------------------------- */
 
@@ -20,9 +21,7 @@ export const AppFrame: React.FC<React.PropsWithChildren> = ({ children }) => {
 
     return (
         <ThemeProvider>
-            <NavContextProvider
-                {...{ sidenavOpened, toggleSidenav }}
-            >
+            <NavContextProvider {...{ sidenavOpened, toggleSidenav }}>
                 <ScrollArea.Autosize>
                     <AppShell
                         transitionDuration={500}
@@ -42,7 +41,7 @@ export const AppFrame: React.FC<React.PropsWithChildren> = ({ children }) => {
                             bg="transparent"
                             zIndex={201}
                         >
-                            <Header disabled />
+                            <Header />
                         </AppShell.Header>
                         <AppShell.Navbar
                             withBorder={false}
@@ -60,7 +59,24 @@ export const AppFrame: React.FC<React.PropsWithChildren> = ({ children }) => {
                                 <Sidenav />
                             </div>
                         </AppShell.Navbar>
-                        <AppShell.Main mt={headerHeight}>{children}</AppShell.Main>
+                        <AppShell.Main
+                            mt={headerHeight}
+                            mih={`calc(100dvh - ${headerHeight}px)`}
+                            display="flex"
+                            style={{ flexDirection: "column" }}
+                        >
+                            <div
+                                style={{
+                                    flex: 1,
+                                    minHeight: 0,
+                                    display: "flex",
+                                    flexDirection: "column",
+                                }}
+                            >
+                                {children}
+                            </div>
+                            <Footer />
+                        </AppShell.Main>
                     </AppShell>
                 </ScrollArea.Autosize>
             </NavContextProvider>

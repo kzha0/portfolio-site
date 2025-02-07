@@ -1,5 +1,5 @@
 import { useSearchParams } from "@remix-run/react";
-import { ErrorComponent } from "~/components/error/Error";
+import { ErrorComponent } from "~/components/ErrorPage/ErrorPage";
 
 export default function ErrorPage() {
     const [searchParams] = useSearchParams();
